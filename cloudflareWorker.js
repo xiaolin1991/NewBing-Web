@@ -1,8 +1,8 @@
 let joinStats = true;  //可选加入统计。 加入统计不会收集任何隐私信息，仅统计访问量。
-let webPath = 'https://raw.githubusercontent.com/jianjianai/NewBingGoGo-Web/master/src/main/resources'; //web页面地址，可以修改成自己的仓库来自定义前端页面
+let webPath = 'https://raw.githubusercontent.com/xiaolin1991/NewBing-Web/master/src/main/resources'; //web页面地址，可以修改成自己的仓库来自定义前端页面
 let serverConfig = {
-    "h1": "NewBingGoGo",
-    "h2": "简单开始和NewBing聊天",
+    "h1": "AI机器架构●持续更新代码 Bug联系：QQ:359844393 曹晓林",
+    "h2": "简单开始和机器聊天,亚马逊文案,Excal函数式,编写代码,物理答题以及科学论文,医生咨询等",
     "p":"",
     "firstMessages":[
         "好的，我已清理好板子，可以重新开始了。我可以帮助你探索什么?",
@@ -44,7 +44,7 @@ let serverConfig = {
     ]
 }
 let cookies = [
-    ""
+    "_U=1RTFYr2DZDvbq_JOVHHzQF8stVkdjW_MHtUN0QeyduSiGxOwJ2nrSCac3dxJujHeT4nd4_5O2Mj6kMxKsjOOMpkFaSFlNuAMsJQcJVhOXggr5s4uHHNQuhP9hYawh1Ll-KdX_xOOT4BYZnr303yRNtY4wVhkuskAaHFfKUguLu0M4s6YBFzTQ_OfrcKkkDROl9SNaomuQI9BtOFkd0Rf6zGTmrBjcJxnyBJEgjmyOGA4"
 ]
 
 
@@ -290,4 +290,3 @@ function getRedirect(url) {
         }
     })
 }
-
