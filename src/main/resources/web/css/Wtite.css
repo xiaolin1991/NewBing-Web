@@ -1,0 +1,816 @@
+/* 头部分 */
+body {
+    font-family: "Segoe UI", Arial, "Microsoft Yahei", sans-serif;
+    font-size: 75%;
+}
+
+#head {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    background-color: #ffffff78;
+    z-index: 100;
+}
+
+div.markdown-body {
+    font-size: 0.7rem;
+}
+
+
+#input {
+    font-size: 0.7rem;
+}
+#ChatRecordsNameInput{
+    font-size: 0.7rem;
+}
+
+#head-img-div {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#head-img-div>img {
+    height: 100%;
+}
+
+#head-img-div-h2-img>* {
+    margin: 0;
+}
+
+
+
+#head-li-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#head-li-div>li {
+    list-style: none;
+    margin-right: 1rem;
+    font-size: 1rem;
+}
+
+#head-li-div>a {
+    display: inline-block;
+    list-style: none;
+    margin-right: 1rem;
+    font-size: 1rem;
+    color: inherit;
+    text-decoration: inherit;
+}
+
+#head-li-div>a:hover{
+    color: #ff8300;
+}
+
+/*加载动画*/
+#load{
+    left: 0;
+    top: 0;
+    margin: 0;
+    position: fixed;
+    z-index: 9999;
+    height: 100vh;
+    width: 100vw;
+    background: #ebf6ff;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+#load.loaded{
+    opacity: 0;
+}
+#load .mesh-loader {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+#load .mesh-loader .circle {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background: #03A9F4;
+    border-radius: 50%;
+    margin: -12.5px;
+    -webkit-animation: mesh 3s ease-in-out infinite;
+    animation: mesh 3s ease-in-out infinite -1.5s;
+}
+
+#load .mesh-loader > div .circle:last-child {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+#load .mesh-loader > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+#load .mesh-loader > div:last-child {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+@-webkit-keyframes mesh {
+    0% {
+        -webkit-transform-origin: 50% -100%;
+        transform-origin: 50% -100%;
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    50% {
+        -webkit-transform-origin: 50% -100%;
+        transform-origin: 50% -100%;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+    50.00001% {
+        -webkit-transform-origin: 50% 200%;
+        transform-origin: 50% 200%;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform-origin: 50% 200%;
+        transform-origin: 50% 200%;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes mesh {
+    0% {
+        -webkit-transform-origin: 50% -100%;
+        transform-origin: 50% -100%;
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    50% {
+        -webkit-transform-origin: 50% -100%;
+        transform-origin: 50% -100%;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+    50.00001% {
+        -webkit-transform-origin: 50% 200%;
+        transform-origin: 50% 200%;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform-origin: 50% 200%;
+        transform-origin: 50% 200%;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/* 背景*/
+
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: repeating-linear-gradient(359deg, rgb(182 196 255) 0%, rgb(207 225 255 / 78%) 100%);
+}
+
+body.a #background,
+body.a .ThemeColors {
+    transition: filter 1s;
+    filter: hue-rotate(10deg);
+}
+
+body.b #background,
+body.b .ThemeColors {
+    transition: filter 1s;
+    filter: hue-rotate(-15deg);
+}
+
+body.c #background,
+body.c .ThemeColors {
+    transition: filter 1s;
+    filter: hue-rotate(-40deg);
+}
+
+
+/*插件的验证*/
+.CAPTCHAIframeDIV{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.CAPTCHAIframe{
+    min-width: 316px;
+    max-height: 84px;
+    overflow: hidden;
+    border: none;
+    border-radius: 1rem;
+    background-color: #ffffffc4;
+}
+
+
+
+
+/* 尾部分 */
+#tail-in {
+    display: flex;
+    width: 95%;
+    max-width: 75rem;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+}
+
+
+
+#input-div-box{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+
+#send {
+    border: 0;
+    margin: 0 1rem 1rem 0;
+    border-radius: 2rem;
+    background-color: rgb(182 196 255);
+    height: 1.8rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    min-width: 3rem;
+    transition: all 0.5s;
+}
+
+#send:hover {
+    background-color: #005fff80;
+}
+
+#input {
+    border: none;
+    resize: none;
+    outline: none;
+    width: 100%;
+    background-color: #ffffff00;
+    margin: 1rem 0 1rem 1rem;
+    height: -webkit-fill-available;
+}
+
+#input:focus-visible {
+    border: 0;
+}
+
+#input-div {
+    border-radius: 1.5rem;
+    flex: 1;
+    height: 100%;
+    background-color: #ffffff;
+    margin: 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    transition: all 0.5s;
+    position: relative;
+    top:0;
+    z-index: 1;
+}
+
+
+/* 页面部分 */
+body {
+    overflow-x: hidden;
+}
+
+#body {
+    max-width: 75rem;
+    margin: auto;
+}
+
+
+#body-bottom {
+    height: 10rem;
+    width: 100%;
+}
+
+
+
+
+
+/* 聊天部分,在页面内 */
+@keyframes acceptMeaaage {
+    from {
+        transform: translate(-4rem, 1rem);
+        opacity: 0;
+    }
+
+    to {}
+}
+
+@keyframes sendMeaaage {
+    from {
+        transform: translate(4rem, 1rem);
+        opacity: 0;
+    }
+
+    to {}
+}
+
+.bing,
+.my {
+    margin-bottom: 2rem;
+}
+
+.bing {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+
+.bing>* {
+    animation: acceptMeaaage 0.5s;
+}
+
+.my>* {
+    animation: sendMeaaage 0.5s;
+}
+
+.my {
+    display: flex;
+    font-size: 1.3rem;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+}
+
+.InternalSearchQuery,
+.InternalLoaderMessage {
+    margin-left: 1rem;
+    font-size: 1rem;
+}
+
+.InternalSearchQuery>p,
+.InternalLoaderMessage>p {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+.adaptiveCardsFatherDIV,
+.my>.bobo {
+    display: inline-block;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 1rem 1rem;
+    max-width: 90%;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.adaptiveCardsFatherDIV .throttling {
+    text-align: end;
+    font-size: 0.4rem;
+    margin-top: 0.5rem;
+    margin-bottom: -0.8rem;
+    border-top: 1px solid #0000005c;
+}
+
+.bing>.sourceAttributions {
+    font-size: 0.9rem;
+    max-width: 90%;
+    margin: 0;
+    margin-bottom: 1rem;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: #ffffff57;
+    border-radius: 2rem;
+    padding: 0.5rem;
+}
+
+.bing:has(.sourceAttributions) .adaptiveCardsFatherDIV {
+    margin-bottom: 1em;
+}
+
+
+.bing>.sourceAttributions>a {
+    display: inline-block;
+    background-color: #ffffff73;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0.1rem;
+    color: #000000;
+    text-decoration: none;
+    transition: flex 0.5s;
+}
+
+.bing>.sourceAttributions>a:hover {
+    background-color: #ffffffb3;
+    flex: none;
+}
+
+
+/* 上标 */
+
+#chat .superscript {
+    display: inline-block;
+    vertical-align: super;
+    border: 0.1rem solid #0969da;
+    border-radius: 1em;
+    min-width: 1em;
+    text-align: center;
+    line-height: 1em;
+    font-size: small;
+    color: #0969da;
+}
+
+#chat .superscript:hover {
+    background-color: #00000024;
+}
+
+/*暂时不知道如何解析的渲染卡片请求*/
+.RenderCardRequest {
+    border-radius: 1em;
+    background-color: white;
+    overflow: auto;
+    padding: 1em;
+    width: 90%;
+    max-width: 1100px;
+}
+
+.RenderCardRequest>iframe {
+    min-width: 768px;
+    width: 100%;
+    height: 602px;
+    border: 0;
+}
+
+
+
+/* 画图部分 */
+
+.GenerateContentQuery {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    max-width: 90%;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    padding: 1rem;
+    overflow: hidden;
+    display: inline-table;
+}
+
+.GenerateContentQuery>a>img {
+    max-width: 24%;
+    margin: 0.5%;
+    transition: all 0.8s;
+    cursor: pointer;
+}
+
+.GenerateContentQuery>a>img:hover {
+    margin: 0.2% 0.8% 0.8% 0.2%;
+    box-shadow: #0000007a 2px 3px 5px 0px;
+    transition: all 0.3s;
+}
+
+/*不适宜的内容部分*/
+.textBlockDeleted{
+    height: 0;
+    margin: 0;
+    border-bottom: 1px solid #ff821391;
+    background-color: #ff8d000f;
+    /*transition: height 0.5s;*/
+}
+.textBlockDeletedEnd{
+    color: #ff8300;
+}
+
+.adaptiveCardsFatherDIV:has(.textBlockDeletedEnd>input:checked)>.textBlockDeleted{
+    height: unset;
+}
+
+/* 错误部分 */
+
+#chat .error {
+    text-align: center;
+    color: red;
+}
+
+.NoPower {
+    text-align: center;
+    color: #ff6d00;
+    cursor: pointer;
+    margin: 1rem;
+    text-decoration: underline;
+}
+
+/* 用于适配不同设备 */
+
+
+/* pc */
+
+:root {
+    font-size: 16px;
+}
+
+div.markdown-body {
+    font-size: 1rem;
+    overflow: auto;
+}
+
+
+/* 窄窗口 */
+@media screen and (max-width:500px) {
+    :root {
+        font-size: 3.5vmin;
+    }
+
+
+
+    .GenerateContentQuery>a>img {
+        max-width: 49%;
+        width: 49%;
+    }
+
+    .bing>.sourceAttributions {
+        /* max-width: 90%; */
+        flex-wrap: wrap;
+    }
+
+    /* .adaptiveCardsFatherDIV,
+    .my>.bobo {
+        max-width: 90%;
+    } */
+
+    .bing>.sourceAttributions>a:hover {
+        flex: auto;
+    }
+
+    /* 聊天部分,在页面内 */
+    @keyframes acceptMeaaage {
+        from {
+            transform: translate(0rem, 1rem);
+            opacity: 0;
+        }
+
+        to {}
+    }
+
+    @keyframes sendMeaaage {
+        from {
+            transform: translate(0rem, 1rem);
+            opacity: 0;
+        }
+
+        to {}
+    }
+}
+
+/*手机 css*/
+
+@media screen and (orientation:portrait) and (max-device-width:800px) and (max-device-height:1000px) {
+    :root {
+        font-size: 3.5vmin;
+    }
+
+    #SearchSuggestions>a {
+        overflow: visible;
+    }
+
+    .InternalSearchQuery,
+    .InternalLoaderMessage {
+        width: 90%;
+    }
+
+    .InternalSearchQuery>p,
+    .InternalLoaderMessage>p {
+        font-size: 1rem;
+    }
+
+    .bing>.sourceAttributions {
+        /* max-width: 90%; */
+        flex-wrap: wrap;
+    }
+
+    .bing>.sourceAttributions>a:hover {
+        flex: auto;
+    }
+
+    /* .adaptiveCardsFatherDIV,
+    .my>.bobo {
+        max-width: 90%;
+    } */
+
+
+    .GenerateContentQuery>a>img {
+        max-width: 49%;
+        width: 49%;
+    }
+
+
+
+    /* 聊天部分,在页面内 */
+    @keyframes acceptMeaaage {
+        from {
+            transform: translate(0rem, 1rem);
+            opacity: 0;
+        }
+
+        to {}
+    }
+
+    @keyframes sendMeaaage {
+        from {
+            transform: translate(0rem, 1rem);
+            opacity: 0;
+        }
+
+        to {}
+    }
+
+}
+
+#head-img-div>h2 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#body {
+    margin: auto;
+    max-width: 80rem;
+}
+
+
+#tail {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    align-items: stretch;
+    background-color: rgba(255, 255, 255, 0);
+    min-width: 20rem;
+    flex: 1;
+}
+
+#body-top {
+    height: 4rem;
+}
+
+#send {
+    opacity: 1 !important;
+    width: auto;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+#input-div {
+    width: auto;
+    height: 6rem;
+    flex: none;
+    display: flex;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    align-items: stretch;
+    border: 1px solid #00000078;
+}
+
+#input {
+    height: auto;
+    width: -webkit-fill-available;
+    margin: 1em;
+    display: block;
+}
+
+#body-body {
+    border-radius: 1rem;
+    margin: 0rem;
+    background-color: #ffffff78;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    padding: 1rem 0rem;
+    align-items: stretch;
+}
+
+#body-body>* {
+    margin: 0rem 1rem;
+}
+
+#tall-title,
+#chat-title {
+    margin: 0;
+    margin-left: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.select-div {
+    background-color: #ffffff78;
+    border-radius: 1rem;
+    border: 1px solid #00000078;
+    margin-bottom: 1rem;
+}
+
+.select-title {
+    margin: 1rem;
+    margin-top: 0.5rem;
+}
+
+.select-select {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    margin-top: 0;
+    flex-wrap: wrap;
+}
+
+.select-buottn {
+    margin: 0.3rem 0.3rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    background-color: #ffffffc9;
+    border: 1px solid #00000042;
+    border-radius: 0.6rem;
+    padding: 0 1rem;
+}
+
+.select-buottn:hover {
+    background-color: #0091ff1f;
+    cursor: pointer;
+}
+
+.select-buottn.selected {
+    background-color: #0091ff6b;
+}
+
+.bing>* {
+    animation: none;
+}
+
+.adaptiveCardsFatherDIV,
+.my>.bobo {
+    max-width: none;
+    display: block;
+    margin-bottom: 0rem;
+    background-color: #ffffff00;
+}
+
+.bing {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 1rem;
+}
+
+#chat {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    min-height: 8rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    flex: 1;
+}
+
+#chat-div {
+    min-width: 20rem;
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+}
+
+.bing>.sourceAttributions {
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: #ffffff00;
+    align-items: flex-start;
+}
+
+#chat>.my,
+#chat>.bing>.InternalSearchQuery,
+#chat>.bing>.InternalLoaderMessage,
+#chat>.bing>.sourceAttributions,
+#chat .adaptiveCardsFatherDIV .throttling{
+    display: none;
+}
