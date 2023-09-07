@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>图片</title>
+    <style>
+        html{
+            border: 0;
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+        body{
+            margin: 0;
+            border: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        #background{
+            background: repeating-linear-gradient(359deg, rgb(182 196 255) 0%, rgb(207 225 255 / 78%) 100%);
+            min-height: 100%;
+            min-width: 100%;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #display{
+            background-color: #ffffff85;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            border-radius: 2rem;
+            max-width: 500px;
+            margin-top: 5rem;
+            margin-bottom: 5em;
+            margin-left: 3%;
+            margin-right: 3%;
+        }
+        #display > h1{
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+        #img{
+            height: 6rem;
+        }
+        /*手机 css*/
+        @media screen and (orientation:portrait) and (max-device-width:800px) and (max-device-height:1000px){
+            :root {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <script src="./js/ChatImgCAPTCHA.js" type="module"></script>
+    <script src="./js/other/stats.js" async="async"></script>
+</head>
+<body>
+<div id="background">
+    <div id="display">
+        <h1 id="h1">验证码</h1>
+        <img id="img">
+        <input type="text" id="input">
+        <input type="button" value="提交" id="sub">
+    </div>
+</div>
+</body>
+</html>
